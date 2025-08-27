@@ -52,7 +52,7 @@ const AuthPage = ({ isLogin, onAuthSuccess }) => {
     };
 
     return (
-        <div className="min-h-screen bg-black font-mono flex flex-col items-center justify-start pt-40 p-4">
+        <div className="min-h-screen bg-black font-mono flex flex-col items-center justify-start pt-20 p-4">
             <h1 className="font-[anton] text-8xl md:text-8xl font-bold text-white tracking-wider">CLIpp</h1>
             <div className="mt-8 w-full max-w-md">
                 <div className="bg-black border border-zinc-700 py-8 px-4 shadow sm:rounded-lg sm:px-10">
