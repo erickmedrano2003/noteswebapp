@@ -55,7 +55,7 @@ const AuthPage = ({ isLogin, onAuthSuccess }) => {
         <div className="min-h-screen bg-black font-mono flex flex-col items-center justify-start pt-40 p-4">
             <h1 className="font-[anton] text-8xl md:text-8xl font-bold text-white tracking-wider">CLIpp</h1>
             <div className="mt-8 w-full max-w-md">
-                <div className="bg-black border border-gray-700 py-8 px-4 shadow sm:rounded-lg sm:px-10">
+                <div className="bg-black border border-zinc-700 py-8 px-4 shadow sm:rounded-lg sm:px-10">
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         <input 
                             type="email" 
@@ -63,7 +63,7 @@ const AuthPage = ({ isLogin, onAuthSuccess }) => {
                             value={email} 
                             onChange={e => setEmail(e.target.value)} 
                             required 
-                            className="w-full p-3 bg-zinc-900 border border-gray-600 text-gray-300 rounded-md focus:ring-green-500 focus:border-green-500"
+                            className="w-full p-3 bg-zinc-900 border border-zinc-700 text-gray-300 rounded-md focus:ring-green-500 focus:border-green-500"
                         />
                         <input 
                             type="password" 
@@ -71,7 +71,7 @@ const AuthPage = ({ isLogin, onAuthSuccess }) => {
                             value={password} 
                             onChange={e => setPassword(e.target.value)} 
                             required 
-                            className="w-full p-3 bg-zinc-900 border border-gray-600 text-gray-300 rounded-md focus:ring-green-500 focus:border-green-500"
+                            className="w-full p-3 bg-zinc-900 border border-zinc-700 text-gray-300 rounded-md focus:ring-green-500 focus:border-green-500"
                         />
                         {error && <p className="text-red-500 text-center">{error}</p>}
                         <button type="submit" className="w-full py-3 bg-green-500 text-gray-900 font-bold rounded-md hover:bg-green-400">
@@ -127,7 +127,7 @@ const DashboardPage = ({ onLogout }) => {
 
     return (
         <div className="min-h-screen bg-black font-mono">
-            <nav className="bg-black border-b border-gray-700">
+            <nav className="bg-black border-b border-zinc-700">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex-shrink-0 flex items-center text-2xl font-bold text-white font-[anton] tracking-wider">CLIpp</div>
@@ -136,7 +136,7 @@ const DashboardPage = ({ onLogout }) => {
                 </div>
             </nav>
             <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                <form onSubmit={handleCreateNote} className="flex items-center space-x-4 bg-black p-4 rounded-lg shadow-lg mb-6 border border-gray-700">
+                <form onSubmit={handleCreateNote} className="flex items-center space-x-4 bg-black p-4 rounded-lg shadow-lg mb-6 border border-zinc-700">
                     <span className="text-green-400 font-bold text-lg">&gt;</span>
                     <input 
                         type="text"
@@ -151,7 +151,7 @@ const DashboardPage = ({ onLogout }) => {
                 </form>
                 <div className="space-y-4">
                     {notes.map(note => (
-                        <div key={note.id} className="bg-black p-4 rounded-lg shadow flex justify-between items-start border border-gray-700">
+                        <div key={note.id} className="bg-black p-4 rounded-lg shadow flex justify-between items-start border border-zinc-700">
                             <div>
                                 <p className="text-gray-300 whitespace-pre-wrap">{note.content}</p>
                                 <p className="text-xs text-gray-500 mt-2">{new Date(note.created_at).toLocaleString()}</p>
