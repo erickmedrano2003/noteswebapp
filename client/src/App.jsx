@@ -53,7 +53,7 @@ const AuthPage = ({ isLogin, onAuthSuccess }) => {
 
     return (
         <div className="min-h-screen bg-black font-mono flex flex-col items-center justify-start pt-20 p-4">
-            <h1 className="font-[anton] text-8xl md:text-8xl font-bold text-white tracking-wider">CLIpp</h1>
+            <h1 className="font-[anton] text-6xl sm:text-8xl font-bold text-white tracking-wider">CLIpp</h1>
             <div className="mt-8 w-full max-w-md">
                 <div className="bg-black border border-zinc-700 py-8 px-4 shadow sm:rounded-lg sm:px-10">
                     <form className="space-y-6" onSubmit={handleSubmit}>
@@ -135,30 +135,30 @@ const DashboardPage = ({ onLogout }) => {
                     </div>
                 </div>
             </nav>
-            <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                <form onSubmit={handleCreateNote} className="flex items-center space-x-4 bg-black p-4 rounded-lg shadow-lg mb-6 border border-zinc-700">
+            <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <form onSubmit={handleCreateNote} className="flex items-center gap-x-4 gap-y-2 bg-black p-4 rounded-lg shadow-lg mb-6 border border-zinc-700">
                     <span className="text-green-400 font-bold text-lg">&gt;</span>
                     <input 
                         type="text"
                         value={newNote}
                         onChange={e => setNewNote(e.target.value)}
-                        placeholder="Type your thoughts here..."
-                        className="flex-grow bg-transparent border-none text-gray-300 focus:ring-0 p-2"
+                        placeholder="Need to vent?"
+                        className="flex-grow bg-transparent border-none text-gray-300 focus:ring-0 p-2 min-w-[150px]"
                     />
-                    <button type="submit" className="px-4 py-2 bg-green-500 text-gray-900 font-bold rounded-md hover:bg-green-400 transition-colors">
+                    <button type="submit" className="px-2 py-2 bg-green-500 text-gray-900 font-bold rounded-md hover:bg-green-400 transition-colors ml-auto text-sm">
                         Enter
                     </button>
                 </form>
                 <div className="space-y-4">
                     {notes.map(note => (
-                        <div key={note.id} className="bg-black p-4 rounded-lg shadow flex justify-between items-start border border-zinc-700">
-                            <div>
-                                <p className="text-gray-300 whitespace-pre-wrap">{note.content}</p>
-                                <p className="text-xs text-gray-500 mt-2">{new Date(note.created_at).toLocaleString()}</p>
+                        <div key={note.id} className="bg-black p-4 rounded-lg shadow flex flex-col border border-zinc-700">
+                            <p className="text-gray-300 whitespace-pre-wrap flex-grow break-words">{note.content}</p>
+                            <div className="flex justify-between items-center flex-wrap mt-2">
+                                <p className="text-xs text-gray-500">{new Date(note.created_at).toLocaleString()}</p>
+                                <button onClick={() => handleDeleteNote(note.id)} className="text-red-500 hover:text-red-400 transition-colors text-xs ml-4">
+                                    [delete]
+                                </button>
                             </div>
-                            <button onClick={() => handleDeleteNote(note.id)} className="text-red-500 ml-4 flex-shrink-0 hover:text-red-400 transition-colors">
-                                [delete]
-                            </button>
                         </div>
                     ))}
                 </div>
